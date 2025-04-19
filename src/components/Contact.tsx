@@ -63,14 +63,14 @@ const Contact = () => {
                 Contact Me
               </button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[705px] max-h-[80vh] bg-white border-[#EAEAEA] rounded-[16px] p-8 md:p-10 mx-auto overflow-auto">
+            <DialogContent className="sm:max-w-[705px] max-h-[80vh] bg-white border-[#EAEAEA] rounded-[16px] p-2 md:p-10 mx-auto overflow-auto">
               <div className="text-center mb-12 animate-fade-in">
                 <h3 className="text-sm text-[#1D1E2C] font-medium mb-2">Contact Me Now</h3>
                 <h2 className="text-[14px] text-[#787878] font-bold">
                   You can reach out to me via this form in minutes!
                 </h2>
               </div>
-              <form onSubmit={handleSubmit} className="glass-card p-8 animate-slide-up opacity-0">
+              <form onSubmit={handleSubmit} className="glass-card p-2 md:p-8 animate-slide-up opacity-0">
                 <div className="flex flex-col gap-6 mb-6">
                   <div>
                     <label htmlFor="name" className="block text-sm text-[#1D1E2C] font-[600] mb-2">
@@ -126,7 +126,7 @@ const Contact = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-white border border-[#D9DCE1] focus:border-drum-gold/50 outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-white border border-[#D9DCE1] text-[#1D1E2C] text-sm focus:border-drum-gold/50 outline-none transition-colors resize-none"
                     placeholder="Your message"
                     required
                   ></textarea>
@@ -136,15 +136,15 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="px-8 py-3 bg-drum-gold text-black font-medium rounded-full hover:bg-drum-gold/80 transition-colors"
+                    className="px-8 py-3 bg-whit text-black font-medium rounded-3xl border border-[#D9DCE1] hover:bg-drum-gold/80 transition-colors"
                   >
                     {isSubmitting ? "Sending..." : "SEND MESSAGE"}
                   </button>
                 </div>
-              </form>
               {successMessage && (
-                <p className="mt-4 text-sm text-drum-gray">{successMessage}</p>
+                <p className="mt-4 text-sm text-[red]">{successMessage}</p>
               )}
+              </form>
             </DialogContent>
           </Dialog>
         </div>
