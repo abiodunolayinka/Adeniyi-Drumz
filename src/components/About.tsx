@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <section id="about" className="py-24 bg-white bg-[rgba(74, 137, 61, 0.1)">
-      <div className="container border border-[#EAEAEA] rounded-[16px] p-8 md:p-10 lg:p-12 mx-auto">
+      <div className="container border border-[#EAEAEA] md:rounded-[16px] p-8 md:p-10 lg:p-12 mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-12 ">
           <div className="w-auto md:w-[447px] animate-slide-up opacity-0">
             <h3 className="text-sm uppercase text-[#262823] font-normal mb-2">

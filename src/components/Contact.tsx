@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +14,6 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -24,25 +25,25 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_fzfc2yl", // Replace with your EmailJS service ID
-        "your_template_id", // Replace with your EmailJS template ID
+        "service_zzsx16t", // Replace with your EmailJS service ID
+        "template_1cgm90h", // Replace with your EmailJS template ID
         {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
         },
-        "your_public_key" // Replace with your EmailJS public key
+        "wIDcvGIjLbGH0vWEO" // Replace with your EmailJS public key
       )
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          setSuccessMessage("Your message has been sent successfully!");
+          toast.success("Your message has been sent successfully!");
           setFormData({ name: "", email: "", phone: "", message: "" });
         },
         (error) => {
           console.error("FAILED...", error);
-          setSuccessMessage("Failed to send your message. Please try again.");
+          toast.error("Failed to send your message. Please try again.");
         }
       )
       .finally(() => setIsSubmitting(false));
@@ -52,7 +53,7 @@ const Contact = () => {
     <section id="contact" className="py-24 bg-drum-dark">
       <div className="container">
         <div className="text-center animate-fade-in">
-          <h3 className="text-sm uppercase text-drum-gold font-medium mb-2">CONTACT ME NOw</h3>
+          <h3 className="text-sm uppercase text-drum-gold font-medium mb-2">CONTACT ME NOW</h3>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in touch for bookings</h2>
         </div>
 
@@ -65,7 +66,7 @@ const Contact = () => {
             </DialogTrigger>
             <DialogContent className="sm:max-w-[705px] max-h-[80vh] bg-white border-[#EAEAEA] rounded-[16px] p-2 md:p-10 mx-auto overflow-auto">
               <div className="text-center mb-12 animate-fade-in">
-                <h3 className="text-sm text-[#1D1E2C] font-medium mb-2">Contact Me Now</h3>
+                <h3 className="text-lg text-[#1D1E2C] font-bold mb-2">Contact Me Now</h3>
                 <h2 className="text-[14px] text-[#787878] font-bold">
                   You can reach out to me via this form in minutes!
                 </h2>
@@ -73,7 +74,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="glass-card p-2 md:p-8 animate-slide-up opacity-0">
                 <div className="flex flex-col gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm text-[#1D1E2C] font-[600] mb-2">
+                    <label htmlFor="name" className="block text-sm text-[#1D1E2C] font-[500] mb-2">
                       Full Name
                     </label>
                     <input
@@ -141,14 +142,12 @@ const Contact = () => {
                     {isSubmitting ? "Sending..." : "SEND MESSAGE"}
                   </button>
                 </div>
-              {successMessage && (
-                <p className="mt-4 text-sm text-[red]">{successMessage}</p>
-              )}
               </form>
             </DialogContent>
           </Dialog>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

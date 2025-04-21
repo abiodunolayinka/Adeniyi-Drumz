@@ -25,8 +25,8 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 rounded-3xl bg-[#00000066] backdrop-blur-[56px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out ${
-        isScrolled ? 'top-0' : 'top-[64px]'
+      className={`fixed left-0 right-0 z-50 md:rounded-3xl bg-[#00000066] backdrop-blur-[56px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out ${
+        isScrolled ? 'top-0' : 'md:top-[64px]'
       }`}
     >
       <div className="container flex items-center justify-between py-4 px-6">
@@ -67,6 +67,7 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            
           </div>
         </div>
       )}
