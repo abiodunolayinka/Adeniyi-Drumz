@@ -7,7 +7,7 @@ const Hero = () => {
       id="home" 
       className="min-h-screen flex items-center justify-center relative bg-white bg-cover bg-center"
       style={{ 
-        backgroundImage: `linear-gradient( rgba(0,0,0,0.7)), url('/lovable-uploads/hero-img.jpg')` 
+        backgroundImage: `linear-gradient( rgba(0,0,0,0.7)), url('https://res.cloudinary.com/dlqrdp5xx/image/upload/v1745313764/hero-img_hiqqff.jpg')` 
       }}
     >
       <div className="container relative text-center z-10">

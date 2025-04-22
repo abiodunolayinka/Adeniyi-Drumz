@@ -23,12 +23,12 @@ const galleryImages = [
   },
   {
     id: 5,
-    src: "/lovable-uploads/image5.jpg",
+    src: "https://res.cloudinary.com/dlqrdp5xx/image/upload/v1745321101/image5_ibnvxj.jpg",
     alt: "Live session"
   },
   {
     id: 6,
-    src: "/lovable-uploads/image6.jpg",
+    src: "https://res.cloudinary.com/dlqrdp5xx/image/upload/v1745314591/image6_jf2sqo.jpg",
     alt: "Festival performance"
   },
   {

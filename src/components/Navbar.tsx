@@ -13,10 +13,21 @@ const navItems = [
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
+
+      // Update active section based on scroll position
+      const sections = navItems.map((item) => document.querySelector(item.href));
+      const currentSection = sections.find(
+        (section) =>
+          section &&
+          section.getBoundingClientRect().top <= window.innerHeight / 2 &&
+          section.getBoundingClientRect().bottom >= window.innerHeight / 2
+      );
+      setActiveSection(currentSection ? currentSection.id : '');
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -26,7 +37,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed left-0 right-0 z-50 md:rounded-3xl bg-[#00000066] backdrop-blur-[56px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out ${
-        isScrolled ? 'top-0' : 'md:top-[64px]'
+        isScrolled ? 'top-0 ' : 'md:top-[64px]'
       }`}
     >
       <div className="container flex items-center justify-between py-4 px-6">
@@ -39,7 +50,9 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-[600] text-white hover:text-gray-300 transition-colors tracking-wider"
+              className={`text-sm font-[600] text-white hover:text-gray-300 transition-colors tracking-wider ${
+                activeSection === item.href.substring(1) ? 'border-b-2 border-red-500' : ''
+              }`}
             >
               {item.name}
             </a>
@@ -61,13 +74,14 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-extralight text-white hover:text-gray-300 transition-colors tracking-wider py-2"
+                className={`text-sm font-extralight text-white hover:text-gray-300 transition-colors tracking-wider py-2 ${
+                  activeSection === item.href.substring(1) ? 'border-b-2 border-red-500' : ''
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
-            
           </div>
         </div>
       )}
