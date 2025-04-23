@@ -4,49 +4,49 @@ import { Play } from 'lucide-react';
 const videoItems = [
   {
     id: 1,
-    thumbnail: "/lovable-uploads/hero-img.jpg",
+    thumbnail: "/lovable-uploads/hero-img.webp",
     title: "Live Performance",
     videoId: "FXVgjFQpULo"
   },
   {
     id: 2,
-    thumbnail: "/lovable-uploads/image1.jpg",
+    thumbnail: "/lovable-uploads/image1.webp",
     title: "Studio Session",
     videoId: "Gi90a4Ru53Q"
   },
   {
     id: 3,
-    thumbnail: "/lovable-uploads/hero-img.jpg",
+    thumbnail: "/lovable-uploads/hero-img.webp",
     title: "Festival Performance",
     videoId: "Di_Q5DUQMTc"
   },
   {
     id: 4,
-    thumbnail: "/lovable-uploads/image1.jpg",
+    thumbnail: "/lovable-uploads/image1.webp",
     title: "Drum Solo",
     videoId: "Y3fwE-J4oYb3qaxj"
   },
   {
     id: 5,
-    thumbnail: "/lovable-uploads/hero-img.jpg",
+    thumbnail: "/lovable-uploads/hero-img.webp",
     title: "Collaboration",
     videoId: "Di_Q5DUQMTc"
   },
   {
     id: 6,
-    thumbnail: "/lovable-uploads/image1.jpg",
+    thumbnail: "/lovable-uploads/image1.webp",
     title: "Rehearsal Session",
     videoId: "FXVgjFQpULo"
   },
   {
     id: 7,
-    thumbnail: "/lovable-uploads/hero-img.jpg",
+    thumbnail: "/lovable-uploads/hero-img.webp",
     title: "Live Concert",
     videoId: "Di_Q5DUQMTc"
   },
   {
     id: 8,
-    thumbnail: "/lovable-uploads/image1.jpg",
+    thumbnail: "/lovable-uploads/image1.webp",
     title: "Tutorial",
     videoId: "Y3fwE-J4oYb3qaxj"
   }
@@ -82,7 +82,7 @@ const Videos = () => {
                 ></iframe>
               ) : (
                 <>
-                  <img
+                  <img loading="lazy"
                     src={video.thumbnail}
                     alt={video.title}
                     className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-300"

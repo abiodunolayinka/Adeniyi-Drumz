@@ -28,7 +28,8 @@ const About = () => {
           <div className="  animate-slide-up opacity-0">
             <div className="rounded rounded-tl-[16px] rounded-br-[16px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden w-[376px] h-[476px]">
               <img
-                src="/lovable-uploads/image1.jpg"
+                loading="lazy"
+                src="/lovable-uploads/image1.webp"
                 alt="Adeniyi playing drums"
                 className="w-full h-auto object-cover"
               />

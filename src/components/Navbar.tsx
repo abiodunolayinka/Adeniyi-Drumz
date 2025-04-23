@@ -63,7 +63,7 @@ const Navbar = () => {
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <img src="../../public/lovable-uploads/menu.svg" alt="Menu" className="w-7 h-7" />
+          <img loading="lazy" src="/lovable-uploads/menu.svg" alt="Menu" className="w-7 h-7" />
         </button>
       </div>
 
