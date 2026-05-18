@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -44,6 +44,14 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --figma-screen-bg: #f7f8fa;
+    --figma-screen-surface: #ffffff;
+    --figma-screen-subtle: #eef1f4;
+    --figma-screen-text: #0f172a;
+    --figma-screen-muted: #475569;
+    --figma-screen-blue: #1f6fd1;
+    --figma-screen-blue-strong: #2073c9;
   }
 
   .dark {
@@ -91,7 +99,7 @@
   }
   
   html {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Satoshi', 'Satoshi Variable', sans-serif;
   }
   
   body {

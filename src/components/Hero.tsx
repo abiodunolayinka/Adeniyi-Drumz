@@ -2,47 +2,40 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative bg-cover bg-center"
-      // style={{
-      //   backgroundImage: `linear-gradient( rgba(0,0,0,0.7)), url('/lovable-uploads/hero-img.webp')`
-      // }}
-    >
-      {/* <img
-        loading="lazy"
-        src="/lovable-uploads/hero-img.webp"
-        alt="hero"
-        className="absolute backdrop-blur-none inset-0 w-full h-full object-cover z-0"
-      /> */}
-      <div
-        className="absolute inset-0 w-full h-full z-0"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/lovable-uploads/hero-img.webp')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
-      <div className="container relative text-center z-10">
-        <h1 className="text-5xl md:text-7xl font-extralight mb-4 text-white animate-fade-in tracking-widest">
-          ADENIYI DRUMZ
-        </h1>
-        <p className="text-lg md:text-xl font-extralight mb-10  text-white animate-fade-in animate-delay-200 tracking-wider">
-          Empowering Lives Through Rhythm and Faith
-        </p>
-        <div className="flex flex-wrap justify-center gap-6 animate-fade-in animate-delay-300">
-          <a
-            href="#videos"
-            className="px-10 py-3 rounded-lg bg-white text-black font-light text-sm hover:bg-white/90 transition-colors tracking-widest"
-          >
-            Watch me Drum
-          </a>
-          <a
-            href="#about"
-            className="px-10 py-3 rounded-lg bg-transparent border border-white text-white font-light text-sm hover:bg-white/10 transition-colors tracking-widest"
-          >
-            See More
-          </a>
+    <section id="home" className="bg-white px-4 pb-16 pt-[142px] text-[#222222] sm:px-8 lg:px-16">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="relative h-[300px] overflow-hidden rounded-[28px] bg-[#151515] ">
+          <img
+            src="/lovable-uploads/hero-img.webp"
+            alt="Adeniyi Adekoya drumming session"
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/55" />
+        </div>
+
+        <div className="mt-14 flex justify-between gap-4">
+          <div className="  max-w-[738px]">
+            <h1 className="text-[18px] sm:text-[32px] lg:text-[48px] font-bold leading-[100%]  text-[#242424] ">
+              Using <span className="text-[#2a86cf]">Rhythm</span> And Drumming To Create Connection,
+              Wellbeing, And Shared Experiences Across{" "}
+              <span className="text-[#3978d6]">Communities</span>.
+            </h1>
+
+            <div className="mt-8 space-y-2">
+              <p className="text-[16px] sm:text-[28px] font-semibold leading-[100%] text-[#2a2a2a]">Adeniyi Adekoya</p>
+              <p className="text-[12px] sm:text-[20px] font-normal leading-[100%] text-[#333333]">
+                Creative Percussionist &amp; Community Practitioner
+              </p>
+            </div>
+          </div>
+
+          <div className="overflow-hidden min-h-[188px] min-w-[120px] h-full  w-[383px] sm:h-[326px] rounded-[28px] lg:mt-1">
+            <img
+              src="/lovable-uploads/image1.webp"
+              alt="Adeniyi Adekoya holding drumsticks beside blue drums"
+              className="w-full  object-cover sm:h-[464px]"
+            />
+          </div>
         </div>
       </div>
     </section>

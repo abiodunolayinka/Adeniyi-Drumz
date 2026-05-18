@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Dosis', 'sans-serif'],
-				heading: ['Dosis', 'sans-serif'],
+				sans: ['Satoshi', 'Satoshi Variable', 'sans-serif'],
+				heading: ['Satoshi', 'Satoshi Variable', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
