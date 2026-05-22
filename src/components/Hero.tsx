@@ -1,4 +1,5 @@
 import React from "react";
+import { imageUrl } from "../lib/image";
 
 const Hero = () => {
   return (
@@ -6,7 +7,7 @@ const Hero = () => {
       <div className="mx-auto max-w-[1280px]">
         <div className="relative h-[300px] overflow-hidden rounded-[28px] bg-[#151515] ">
           <img
-            src="/lovable-uploads/hero-img.webp"
+            src={imageUrl("hero")}
             alt="Adeniyi Adekoya drumming session"
             className="h-full w-full object-cover object-center"
           />
@@ -31,7 +32,7 @@ const Hero = () => {
 
           <div className="overflow-hidden min-h-[188px] min-w-[120px] h-full  w-[383px] sm:h-[326px] rounded-[28px] lg:mt-1">
             <img
-              src="/lovable-uploads/image1.webp"
+              src={imageUrl("image1")}
               alt="Adeniyi Adekoya holding drumsticks beside blue drums"
               className="w-full  object-cover sm:h-[464px]"
             />

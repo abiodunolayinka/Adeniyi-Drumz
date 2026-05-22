@@ -1,25 +1,26 @@
 import React from "react";
+import { imageUrl } from "../lib/image";
 
 const serviceItems = [
   {
     title: "Workshops",
     description:
       "Participants learn about rhythm, collaboration, and self-expression. Our workshops are designed to be fun, engaging, and educational.",
-    image: "/lovable-uploads/image2.webp",
+    image: imageUrl("image2"),
     alt: "Drumming workshop session",
   },
   {
     title: "Performances",
     description:
       "Audiences are captivated by the energy and skill Adeniyi brings to every performance. His passion is infectious, creating unforgettable experiences.",
-    image: "/lovable-uploads/image6.jpg",
+    image: imageUrl("image6"),
     alt: "Adeniyi performing on stage with musicians",
   },
   {
     title: "Collaborations",
     description:
       "Adeniyi's collaborative projects blend diverse musical traditions, fostering unity and creativity. These projects showcase the power of music.",
-    image: "/lovable-uploads/bg.png",
+    image: imageUrl("bg"),
     alt: "Collaborative drumming performance",
   },
 ];

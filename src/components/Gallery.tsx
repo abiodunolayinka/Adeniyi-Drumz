@@ -1,39 +1,40 @@
 import React from "react";
+import { imageUrl } from "../lib/image";
 
 const galleryImages = [
   {
     id: 1,
-    src: "/lovable-uploads/image1.webp",
+    src: imageUrl("image1"),
     alt: "Adeniyi playing drums",
   },
   {
     id: 2,
-    src: "/lovable-uploads/image2.webp",
+    src: imageUrl("image2"),
     alt: "Stage performance",
   },
   {
     id: 3,
-    src: "/lovable-uploads/image3.webp",
+    src: imageUrl("image3"),
     alt: "Studio session",
   },
   {
     id: 4,
-    src: "/lovable-uploads/image4.webp",
+    src: imageUrl("image4"),
     alt: "Concert performance",
   },
   {
     id: 5,
-    src: "/lovable-uploads/image5.webp",
+    src: imageUrl("image5"),
     alt: "Live session",
   },
   {
     id: 6,
-    src: "/lovable-uploads/image6.webp",
+    src: imageUrl("image6"),
     alt: "Festival performance",
   },
   {
     id: 7,
-    src: "/lovable-uploads/image7.webp",
+    src: imageUrl("image7"),
     alt: "Festival performance",
   },
 ];

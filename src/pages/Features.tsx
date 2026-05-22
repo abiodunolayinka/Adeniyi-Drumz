@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import Navbar from "../components/Navbar";
+import { imageUrl } from "../lib/image";
 
 const mediaItems = [
   {
@@ -44,7 +45,7 @@ const Features = () => {
         <div className="mt-12 items-center gap-14 flex flex-col md:flex-row md:justify-between">
           <div className="overflow-hidden rounded-[26px] bg-[#d9d9d9] h-[290px] md:h-[540px] w-full md:max-w-[480px] lg:h-[850px]">
             <img
-              src="/lovable-uploads/image7.webp"
+              src={imageUrl("image7")}
               alt="Adeniyi Adekoya standing beside blue drums"
               className="w-full md:max-w-full object-cover object-[48%_50%] h-[850px] "
             />

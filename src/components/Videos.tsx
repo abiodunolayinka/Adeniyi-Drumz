@@ -1,52 +1,53 @@
 import React, { useState } from 'react';
 import { Play } from 'lucide-react';
+import { imageUrl } from "../lib/image";
 
 const videoItems = [
   {
     id: 1,
-    thumbnail: "/lovable-uploads/hero-img.webp",
+    thumbnail: imageUrl("hero"),
     title: "Live Performance",
     videoId: "FXVgjFQpULo"
   },
   {
     id: 2,
-    thumbnail: "/lovable-uploads/image1.webp",
+    thumbnail: imageUrl("image1"),
     title: "Studio Session",
     videoId: "Gi90a4Ru53Q"
   },
   {
     id: 3,
-    thumbnail: "/lovable-uploads/hero-img.webp",
+    thumbnail: imageUrl("hero"),
     title: "Festival Performance",
     videoId: "Di_Q5DUQMTc"
   },
   {
     id: 4,
-    thumbnail: "/lovable-uploads/image1.webp",
+    thumbnail: imageUrl("image1"),
     title: "Drum Solo",
     videoId: "Y3fwE-J4oYb3qaxj"
   },
   {
     id: 5,
-    thumbnail: "/lovable-uploads/hero-img.webp",
+    thumbnail: imageUrl("hero"),
     title: "Collaboration",
     videoId: "Di_Q5DUQMTc"
   },
   {
     id: 6,
-    thumbnail: "/lovable-uploads/image1.webp",
+    thumbnail: imageUrl("image1"),
     title: "Rehearsal Session",
     videoId: "FXVgjFQpULo"
   },
   {
     id: 7,
-    thumbnail: "/lovable-uploads/hero-img.webp",
+    thumbnail: imageUrl("hero"),
     title: "Live Concert",
     videoId: "Di_Q5DUQMTc"
   },
   {
     id: 8,
-    thumbnail: "/lovable-uploads/image1.webp",
+    thumbnail: imageUrl("image1"),
     title: "Tutorial",
     videoId: "Y3fwE-J4oYb3qaxj"
   }

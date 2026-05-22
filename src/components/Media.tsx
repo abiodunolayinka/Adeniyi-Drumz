@@ -1,17 +1,18 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
+import { imageUrl } from "../lib/image";
 
 const mediaItems = [
   {
     id: 1,
-    image: "/lovable-uploads/image1.webp",
+    image: imageUrl("image1"),
     title: "Interview with Leadership Newspaper",
     description: "Adeniyi Drumz: From Makeshift Drums To Global Stage...",
     link: "https://leadership.ng/adeniyi-drumz-from-makeshift-drums-to-global-stage/",
   },
   {
     id: 2,
-    image: "/lovable-uploads/image3.webp",
+    image: imageUrl("image3"),
     title: "Nigeria Tribune Newspaper Feature",
     description:
       "Nigerian-born Adeniyi Drumz hosts drum dialogue, rhythm exchange in Sheffield, UK ...",
@@ -19,7 +20,7 @@ const mediaItems = [
   },
   {
     id: 3,
-    image: "/lovable-uploads/image5.webp",
+    image: imageUrl("image5"),
     title: "Interview with Trust Radio",
     description:
       "Adeniyi Drumz: The Nigerian-born Drummer Making waves in the UK entertainment scene ...",
@@ -27,7 +28,7 @@ const mediaItems = [
   },
   {
     id: 4,
-    image: "/lovable-uploads/image2.webp",
+    image: imageUrl("image2"),
     title: "Adeniyi Drumz in Sheffield",
     description:
       "Adeniyi Drumz Set to Captivate Sheffield with Drums Dialogue & Rhythm Exchange...",

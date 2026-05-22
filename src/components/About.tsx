@@ -1,4 +1,5 @@
 import React from "react";
+import { imageUrl } from "../lib/image";
 
 const About = () => {
   return (
@@ -24,7 +25,7 @@ const About = () => {
         <div className="mx-auto mt-12 flex max-w-[1040px] items-center justify-center gap-6 sm:mt-14 lg:gap-10">
           <div className="relative hidden h-[632px] w-[110px] shrink-0 overflow-hidden rounded-[38px] bg-[#d9d9d9] md:block">
             <img
-              src="/lovable-uploads/hero-img.webp"
+              src={imageUrl("hero")}
               alt="Adeniyi Adekoya performing with drums"
               className="h-full w-full object-cover object-[44%_50%]"
             />
@@ -33,7 +34,7 @@ const About = () => {
 
           <div className="h-[420px] w-full max-w-[480px] overflow-hidden rounded-[28px] bg-[#d9d9d9] sm:h-[552px]">
             <img
-              src="/lovable-uploads/image4.webp"
+              src={imageUrl("image4")}
               alt="Adeniyi Adekoya seated with blue drums"
               className="h-full w-full object-cover object-[52%_48%]"
             />
@@ -41,7 +42,7 @@ const About = () => {
 
           <div className="relative hidden h-[632px] w-[110px] shrink-0 overflow-hidden rounded-[38px] bg-[#d9d9d9] md:block">
             <img
-              src="/lovable-uploads/image7.webp"
+              src={imageUrl("image7")}
               alt="Adeniyi Adekoya at a drumming session"
               className="h-full w-full object-cover object-[58%_50%]"
             />

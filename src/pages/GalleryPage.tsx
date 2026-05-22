@@ -1,56 +1,57 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
+import { imageUrl } from "../lib/image";
 
 type GalleryTab = "photos" | "videos";
 
 const photos = [
   {
-    src: "/lovable-uploads/bg.png",
+    src: imageUrl("bg"),
     alt: "Adeniyi Adekoya performing with percussionists",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/lovable-uploads/image2.webp",
+    src: imageUrl("image2"),
     alt: "Adeniyi Adekoya seated at a drum kit",
     className: "",
   },
   {
-    src: "/lovable-uploads/image6.jpg",
+    src: imageUrl("image6"),
     alt: "Adeniyi Adekoya performing with a percussion group",
     className: "",
   },
   {
-    src: "/lovable-uploads/image5.webp",
+    src: imageUrl("image5"),
     alt: "Adeniyi Adekoya teaching beside a blue drum kit",
     className: "",
   },
   {
-    src: "/lovable-uploads/image2.jpg",
+    src: imageUrl("image2Jpg"),
     alt: "Workshop participants in a community hall",
     className: "",
   },
   {
-    src: "/lovable-uploads/image3.webp",
+    src: imageUrl("image3"),
     alt: "Workshop group posing with drumsticks",
     className: "",
   },
   {
-    src: "/lovable-uploads/hero-img.webp",
+    src: imageUrl("hero"),
     alt: "Outdoor drumming practice",
     className: "",
   },
   {
-    src: "/lovable-uploads/image7.webp",
+    src: imageUrl("image7"),
     alt: "Community performance group photo",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: "/lovable-uploads/image6.jpg",
+    src: imageUrl("image6"),
     alt: "Welcoming cultures celebration performance",
     className: "",
   },
   {
-    src: "/lovable-uploads/image4.webp",
+    src: imageUrl("image4"),
     alt: "Live cultural drumming performance",
     className: "",
   },
@@ -58,19 +59,19 @@ const photos = [
 
 const videos = [
   {
-    src: "/lovable-uploads/image4.webp",
+    src: imageUrl("image4"),
     alt: "Live cultural drumming video",
   },
   {
-    src: "/lovable-uploads/image3.webp",
+    src: imageUrl("image3"),
     alt: "Workshop group video",
   },
   {
-    src: "/lovable-uploads/image2.jpg",
+    src: imageUrl("image2Jpg"),
     alt: "Participatory rhythm workshop video",
   },
   {
-    src: "/lovable-uploads/bg.png",
+    src: imageUrl("bg"),
     alt: "Community percussion performance video",
   },
 ];
