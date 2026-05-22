@@ -1,93 +1,83 @@
 import React from "react";
-import { Music, VideoIcon, GraduationCap } from "lucide-react";
+import { Monitor, Palette, Database, Shield, CreditCard, Cloud, GitBranch } from "lucide-react";
+import { skills } from "@/data/portfolio";
+import use3DTilt from "@/hooks/use3DTilt";
 
-const serviceItems = [
-  {
-    title: "Live Performance",
-    description: "High-energy live drumming for concerts and events",
-    icon: Music,
-  },
-  {
-    title: "Studio Sessions",
-    description: "Professional studio recording services",
-    icon: VideoIcon,
-  },
-  {
-    title: "Drum Lessons",
-    description: "Personalized drum lessons for all skill levels",
-    icon: GraduationCap,
-  },
-];
+const iconMap: Record<string, React.ReactNode> = {
+  Monitor:   <Monitor size={22} />,
+  Palette:   <Palette size={22} />,
+  Database:  <Database size={22} />,
+  Shield:    <Shield size={22} />,
+  CreditCard:<CreditCard size={22} />,
+  Cloud:     <Cloud size={22} />,
+  GitBranch: <GitBranch size={22} />,
+};
+
+const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
+  const { ref, style, glowStyle, handleMouseMove, handleMouseLeave } = use3DTilt(10, 1.04);
+
+  return (
+    <div
+      ref={ref}
+      style={{ ...style, transformStyle: "preserve-3d" as const, animationDelay: `${index * 80}ms` }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative bg-[#0F172A] rounded-2xl border border-[#334155] hover:border-[#3B82F6]/60 transition-colors duration-300 cursor-default animate-slide-up opacity-0 shimmer-card"
+    >
+      {/* Mouse-follow glow overlay */}
+      <div
+        className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300"
+        style={glowStyle}
+      />
+
+      <div className="relative z-10 p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div
+            className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#3B82F6]/10 text-[#3B82F6] transition-all duration-300 group-hover:bg-[#3B82F6]/20"
+            style={{ transform: "translateZ(20px)" }}
+          >
+            {iconMap[skill.icon]}
+          </div>
+          <h3
+            className="text-[#F1F5F9] font-[700] text-sm tracking-wide"
+            style={{ transform: "translateZ(10px)" }}
+          >
+            {skill.category}
+          </h3>
+        </div>
+        <div className="flex flex-wrap gap-2" style={{ transform: "translateZ(6px)" }}>
+          {skill.techs.map((tech) => (
+            <span
+              key={tech}
+              className="px-2.5 py-1 rounded-lg bg-[#1E293B] text-[#94A3B8] text-xs font-[500] border border-[#334155] hover:border-[#3B82F6]/40 hover:text-[#F1F5F9] transition-colors duration-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-white  mx-auto">
-      <div className="px-4 sm:px-6 lg:px-20 py-[40px] lg:py-[65px]  mx-auto max-w-[1200px] bg-black md:rounded-3xl">
-        <div className="text-center md:w-[365px] mb-10 mx-auto">
-          <h3 className="text-sm  text-[#FFFFFF] font-normal mb-2">Services</h3>
-          <h2 className="text-2xl font-normal mb-2 text-white">
-            Always ready to provide these services for you
+    <section id="skills" className="py-24 bg-[#1E293B]">
+      <div className="container">
+        <div className="text-center mb-16 animate-fade-in">
+          <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">Technical Skills</span>
+          <h2 className="text-3xl md:text-4xl font-[700] text-[#F1F5F9] mt-2">
+            What I work with
           </h2>
+          <p className="text-[#94A3B8] mt-3 max-w-xl mx-auto text-base font-light">
+            A curated stack built across 4+ years of production fintech, SaaS, and enterprise work.
+          </p>
         </div>
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {serviceItems.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white w-[259px] h-[209px] p-8 rounded-[16px] hover:scale-105 transition-all duration-300"
-            >
-              <div className="mb-4 text-black">
-                <service.icon size={24} />
-              </div>
-              <h3 className="text-xl font-normal mb-3 text-black">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 font-light">{service.description}</p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skills.map((skill, index) => (
+            <SkillCard key={skill.category} skill={skill} index={index} />
           ))}
-        </div> */}
-        <div className="md:flex  justify-center items-center gap-2.5   ">
-          <div className="bg-white md:w-[504px] h-[209px] md:h-[428px] mb-2 md:mb-0 p-8 rounded-[16px] hover:scale-105 transition-all duration-300">
-            <div className="mb-4 text-black"></div>
-            <h3 className="text-xl font-normal mb-3 text-black">Trainings</h3>
-            <p className="text-gray-600 font-light md:w-[309px]">
-              I have a planned out schedule for people interested in learning.
-              contact me
-            </p>
-          </div>
-          
-          <div className="flex flex-col gap-2 md:mb-0 mb-2" >
-            <div className="bg-white md:w-[259px]  h-[209px] p-8 rounded-[16px] hover:scale-105 transition-all duration-300">
-              <div className="mb-4 text-black"></div>
-              <h3 className="text-xl font-normal mb-3 text-black">Gospel Concerts</h3>
-              <p className="text-gray-600 font-light ">
-               Team of instrumentalists
-              </p>
-            </div>
-            <div className="bg-white md:w-[259px]  h-[209px] p-8 rounded-[16px] hover:scale-105 transition-all duration-300">
-              <div className="mb-4 text-black"></div>
-              <h3 className="text-xl font-normal mb-3 text-black">Trainings</h3>
-              <p className="text-gray-600 font-light ">
-              Touring the world of music
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col gap-2 md:mb-0 mb-2">
-            <div className="bg-white md:w-[259px]  h-[209px] p-8 rounded-[16px] hover:scale-105 transition-all duration-300">
-              <div className="mb-4 text-black"></div>
-              <h3 className="text-xl font-normal mb-3 text-black">Bookings</h3>
-              <p className="text-gray-600 font-light ">
-              Contact me to book for
-              </p>
-            </div>
-            <div className="bg-white md:w-[259px]  h-[209px] p-8 rounded-[16px] hover:scale-105 transition-all duration-300">
-              <div className="mb-4 text-black"></div>
-              <h3 className="text-xl font-normal mb-3 text-black">Trainings</h3>
-              <p className="text-gray-600 font-light ">
-              I have a planned out schedule for people interested in learning. contact me
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,26 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const testimonials = [
-  {
-    id: 1,
-    quote: "Working with Adeniyi was a dream come true. His rhythm and energy transformed our album into something exceptional. He's not just technically skilled but brings so much creativity to the table.",
-    author: "James Wilson",
-    position: "Music Producer"
-  },
-  {
-    id: 2,
-    quote: "I've collaborated with many drummers over my 20-year career, but Adeniyi stands out. His versatility across music genres and his ability to elevate any performance is truly remarkable.",
-    author: "Sarah Johnson",
-    position: "Recording Artist"
-  },
-  {
-    id: 3,
-    quote: "Adeniyi's drumming masterclass changed how I approach rhythm. His teaching style is clear, patient, and incredibly effective. I've grown more in 3 months with him than years on my own.",
-    author: "Michael Thomas",
-    position: "Student Drummer"
-  }
-];
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { testimonials } from "@/data/portfolio";
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,54 +16,65 @@ const Testimonials = () => {
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000); // Change testimonial every 5 seconds
-
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section 
-      id="testimonial" 
-      className="py-24 bg-cover bg-center relative"
-      style={{ 
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('/lovable-uploads/bg.png')` 
-      }}
-    >
-      <div className="container relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <h3 className="text-sm uppercase text-white font-medium mb-2">TESTIMONIALS</h3>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">
-            What people say about me?
+    <section id="testimonials" className="py-24 bg-[#1E293B]">
+      <div className="container">
+        <div className="text-center mb-16 animate-fade-in">
+          <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">Testimonials</span>
+          <h2 className="text-3xl md:text-4xl font-[700] text-[#F1F5F9] mt-2">
+            What colleagues say
           </h2>
         </div>
-        
-        <div className="max-w-[570px] mx-auto relative">
-          {/* Testimonial Box */}
-          <div className="relative bg-black border border-[#EAEAEA] leading-[150%] rounded-3xl p-8 md:p-10 animate-fade-in">
-            <div className="text-center">
-              <p className="text-[14px] mb-8 transition-all duration-500 ease-in-out">
-                "{testimonials[currentIndex].quote}"
-              </p>
-              
-              <div className="transition-all duration-500 ease-in-out">
-                <p className="font-medium text-white">{testimonials[currentIndex].author}</p>
-                <p className="text-drum-gray">{testimonials[currentIndex].position}</p>
+
+        <div className="max-w-2xl mx-auto relative">
+          <div className="relative bg-[#0F172A] border border-[#334155] rounded-3xl p-8 md:p-10 animate-fade-in">
+            <Quote size={32} className="text-[#3B82F6]/30 mb-4" />
+
+            <p className="text-[#94A3B8] text-base leading-relaxed mb-8 transition-all duration-500 ease-in-out">
+              "{testimonials[currentIndex].quote}"
+            </p>
+
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#3B82F6]/20 border border-[#3B82F6]/30 flex items-center justify-center">
+                <span className="text-[#3B82F6] font-[700] text-sm">
+                  {testimonials[currentIndex].author.split(' ').map(n => n[0]).join('')}
+                </span>
               </div>
+              <div>
+                <p className="font-[600] text-[#F1F5F9] text-sm">{testimonials[currentIndex].author}</p>
+                <p className="text-[#94A3B8] text-xs">{testimonials[currentIndex].position}</p>
+              </div>
+            </div>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === currentIndex ? 'w-6 bg-[#3B82F6]' : 'w-1.5 bg-[#334155]'
+                  }`}
+                />
+              ))}
             </div>
           </div>
 
-          {/* Navigation Arrows */}
-          <button 
-            onClick={handlePrev} 
-            className="absolute left-[-70px] top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200 transition-all"
+          <button
+            onClick={handlePrev}
+            className="absolute left-[-20px] md:left-[-56px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0F172A] border border-[#334155] text-[#94A3B8] hover:text-[#F1F5F9] hover:border-[#3B82F6] flex items-center justify-center transition-all"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={20} />
           </button>
-          <button 
-            onClick={handleNext} 
-            className="absolute right-[-70px] top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full p-2 shadow-md hover:bg-gray-200 transition-all"
+          <button
+            onClick={handleNext}
+            className="absolute right-[-20px] md:right-[-56px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#0F172A] border border-[#334155] text-[#94A3B8] hover:text-[#F1F5F9] hover:border-[#3B82F6] flex items-center justify-center transition-all"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={20} />
           </button>
         </div>
       </div>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'About', href: '#about' },
-  { name: 'Service', href: '#services' },
-  { name: 'Video', href: '#videos' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Blog', href: '#blog' },
-  { name: 'Testimonials', href: '#testimonial' },
-  { name: 'Contact', href: '#contact' }
+  { name: 'Skills', href: '#skills' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Media', href: '#media' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -19,7 +20,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
 
-      // Update active section based on scroll position
       const sections = navItems.map((item) => document.querySelector(item.href));
       const currentSection = sections.find(
         (section) =>
@@ -36,22 +36,29 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 md:rounded-3xl bg-[#00000066] backdrop-blur-[56px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out ${
-        isScrolled ? 'top-0 ' : 'md:top-[64px]'
+      className={`fixed left-0 right-0 z-50 md:rounded-3xl bg-[#0F172A]/80 backdrop-blur-[56px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out border border-[#1E293B] ${
+        isScrolled ? 'top-0' : 'md:top-[40px]'
       }`}
     >
       <div className="container flex items-center justify-between py-4 px-6">
-        <a href="/" className="flex items-center">
-          <span className="font-[800] text-white tracking-widest text-sm">ADENIYI DRUMZ</span>
+        <a href="/" className="flex items-center gap-2">
+          <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#3B82F6] text-white font-bold text-sm">
+            OA
+          </span>
+          <span className="font-[700] text-[#F1F5F9] tracking-wide text-sm hidden sm:block">
+            Olayinka Abiodun
+          </span>
         </a>
 
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`text-sm font-[600] text-white hover:text-gray-300 transition-colors tracking-wider ${
-                activeSection === item.href.substring(1) ? 'border-b-2 border-red-500' : ''
+              className={`text-sm font-[500] transition-colors tracking-wide ${
+                activeSection === item.href.substring(1)
+                  ? 'text-[#3B82F6] border-b-2 border-[#3B82F6]'
+                  : 'text-[#94A3B8] hover:text-[#F1F5F9]'
               }`}
             >
               {item.name}
@@ -59,29 +66,46 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <button
-          className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        <a
+          href="#contact"
+          className="hidden md:inline-flex items-center px-4 py-2 rounded-lg bg-[#3B82F6] text-white text-sm font-[500] hover:bg-[#60A5FA] transition-colors"
         >
-          <img loading="lazy" src="/lovable-uploads/menu.svg" alt="Menu" className="w-7 h-7" />
+          Hire Me
+        </a>
+
+        <button
+          className="md:hidden text-[#94A3B8] hover:text-white transition-colors"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md">
-          <div className="container py-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-[#0F172A]/98 border-t border-[#1E293B]">
+          <div className="container py-4 flex flex-col space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-extralight text-white hover:text-gray-300 transition-colors tracking-wider py-2 ${
-                  activeSection === item.href.substring(1) ? 'border-b-2 border-red-500' : ''
+                className={`text-sm font-[500] py-3 px-2 rounded-lg transition-colors tracking-wide ${
+                  activeSection === item.href.substring(1)
+                    ? 'text-[#3B82F6] bg-[#1E293B]'
+                    : 'text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#1E293B]'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-lg bg-[#3B82F6] text-white text-sm font-[500] hover:bg-[#60A5FA] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Hire Me
+            </a>
           </div>
         </div>
       )}

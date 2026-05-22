@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Dosis', 'sans-serif'],
-				heading: ['Dosis', 'sans-serif'],
+				sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+				heading: ['"Plus Jakarta Sans"', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,11 +66,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        drum: {
-          dark: '#000000',
+        port: {
+          dark: '#0F172A',
+          mid: '#1E293B',
+          blue: '#3B82F6',
+          'blue-light': '#60A5FA',
+          text: '#F1F5F9',
+          muted: '#94A3B8',
           gold: '#D4AF37',
-          light: '#FFFFFF',
-          gray: '#666666',
+        },
+        drum: {
+          dark: '#0F172A',
+          gold: '#3B82F6',
+          light: '#F1F5F9',
+          gray: '#94A3B8',
         }
 			},
 			borderRadius: {
