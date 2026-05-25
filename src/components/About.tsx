@@ -1,6 +1,7 @@
 import { GraduationCap, Award, MapPin } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import useCounter from "@/hooks/useCounter";
+import HeroCanvas from "./HeroCanvas";
 
 const stats = [
   { end: 4, suffix: "+", label: "Years Experience" },
@@ -26,7 +27,9 @@ const StatCard = ({ stat }: { stat: typeof stats[0] }) => {
 const About = () => {
   return (
     <section id="about" className="py-24 bg-[#0F172A]">
-      <div className="container">
+      <div className="container relative">
+        
+      <HeroCanvas />
         <div className="text-center mb-16 animate-fade-in">
           <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">About Me</span>
           <h2 className="text-3xl md:text-4xl font-[700] text-[#F1F5F9] mt-2">

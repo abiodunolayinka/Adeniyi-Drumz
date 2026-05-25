@@ -2,29 +2,47 @@ import React from "react";
 import { ExternalLink } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import use3DTilt from "@/hooks/use3DTilt";
+import HeroCanvas from "./HeroCanvas";
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
-  const { ref, style, glowStyle, handleMouseMove, handleMouseLeave } = use3DTilt(10, 1.03);
+const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) => {
+  const { ref, style, glowStyle, handleMouseMove, handleMouseLeave } =
+    use3DTilt(10, 1.03);
 
   return (
     <div
       ref={ref}
-      style={{ ...style, transformStyle: "preserve-3d" as const, animationDelay: `${index * 80}ms` }}
+      style={{
+        ...style,
+        transformStyle: "preserve-3d" as const,
+        animationDelay: `${index * 80}ms`,
+      }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative bg-[#0F172A] rounded-2xl border border-[#334155] hover:border-[#3B82F6]/60 transition-colors duration-300 flex flex-col animate-slide-up opacity-0 shimmer-card cursor-default"
     >
       {/* Mouse-follow glow */}
-      <div className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300" style={glowStyle} />
-
-      {/* Top accent bar */}
       <div
-        className="h-1 w-full rounded-t-2xl bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]"
-        style={{ transform: "translateZ(4px)" }}
+        className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300"
+        style={glowStyle}
       />
 
+      {/* Top accent bar */}
+      {/* <div
+        className="h-1 w-full rounded-t-2xl bg-gradient-to-r from-[#3B82F6] to-[#60A5FA]"
+        style={{ transform: "translateZ(4px)" }}
+      /> */}
+
       <div className="relative z-10 p-6 flex flex-col flex-1">
-        <div className="flex items-start justify-between mb-3" style={{ transform: "translateZ(12px)" }}>
+        <div
+          className="flex items-start justify-between mb-3"
+          style={{ transform: "translateZ(12px)" }}
+        >
           <h3 className="text-[#F1F5F9] font-[700] text-base leading-tight pr-2">
             {project.name}
           </h3>
@@ -43,7 +61,10 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         </p>
 
         {/* Tech stack */}
-        <div className="flex flex-wrap gap-1.5 mb-5" style={{ transform: "translateZ(10px)" }}>
+        <div
+          className="flex flex-wrap gap-1.5 mb-5"
+          style={{ transform: "translateZ(10px)" }}
+        >
           {project.stack.map((tech) => (
             <span
               key={tech}
@@ -87,15 +108,19 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
 
 const Gallery = () => {
   return (
-    <section id="projects" className="py-24 bg-[#1E293B]">
+    <section id="projects" className="py-24 bg-[#1E293B] relative">
+      <HeroCanvas />
       <div className="container">
         <div className="text-center mb-16 animate-fade-in">
-          <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">Portfolio</span>
+          <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">
+            Portfolio
+          </span>
           <h2 className="text-3xl md:text-4xl font-[700] text-[#F1F5F9] mt-2">
             Featured Projects
           </h2>
           <p className="text-[#94A3B8] mt-3 max-w-xl mx-auto text-base font-light">
-            Production applications across banking, logistics, SaaS, and mobile — from monorepos to cross-platform apps.
+            Production applications across banking, logistics, SaaS, and mobile
+            — from monorepos to cross-platform apps.
           </p>
         </div>
 

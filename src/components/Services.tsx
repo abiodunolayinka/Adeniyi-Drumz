@@ -1,25 +1,45 @@
 import React from "react";
-import { Monitor, Palette, Database, Shield, CreditCard, Cloud, GitBranch } from "lucide-react";
+import {
+  Monitor,
+  Palette,
+  Database,
+  Shield,
+  CreditCard,
+  Cloud,
+  GitBranch,
+} from "lucide-react";
 import { skills } from "@/data/portfolio";
 import use3DTilt from "@/hooks/use3DTilt";
+import HeroCanvas from "./HeroCanvas";
 
 const iconMap: Record<string, React.ReactNode> = {
-  Monitor:   <Monitor size={22} />,
-  Palette:   <Palette size={22} />,
-  Database:  <Database size={22} />,
-  Shield:    <Shield size={22} />,
-  CreditCard:<CreditCard size={22} />,
-  Cloud:     <Cloud size={22} />,
+  Monitor: <Monitor size={22} />,
+  Palette: <Palette size={22} />,
+  Database: <Database size={22} />,
+  Shield: <Shield size={22} />,
+  CreditCard: <CreditCard size={22} />,
+  Cloud: <Cloud size={22} />,
   GitBranch: <GitBranch size={22} />,
 };
 
-const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number }) => {
-  const { ref, style, glowStyle, handleMouseMove, handleMouseLeave } = use3DTilt(10, 1.04);
+const SkillCard = ({
+  skill,
+  index,
+}: {
+  skill: (typeof skills)[0];
+  index: number;
+}) => {
+  const { ref, style, glowStyle, handleMouseMove, handleMouseLeave } =
+    use3DTilt(10, 1.04);
 
   return (
     <div
       ref={ref}
-      style={{ ...style, transformStyle: "preserve-3d" as const, animationDelay: `${index * 80}ms` }}
+      style={{
+        ...style,
+        transformStyle: "preserve-3d" as const,
+        animationDelay: `${index * 80}ms`,
+      }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative bg-[#0F172A] rounded-2xl border border-[#334155] hover:border-[#3B82F6]/60 transition-colors duration-300 cursor-default animate-slide-up opacity-0 shimmer-card"
@@ -45,7 +65,10 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
             {skill.category}
           </h3>
         </div>
-        <div className="flex flex-wrap gap-2" style={{ transform: "translateZ(6px)" }}>
+        <div
+          className="flex flex-wrap gap-2"
+          style={{ transform: "translateZ(6px)" }}
+        >
           {skill.techs.map((tech) => (
             <span
               key={tech}
@@ -62,15 +85,20 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0]; index: number })
 
 const Services = () => {
   return (
-    <section id="skills" className="py-24 bg-[#1E293B]">
+    <section id="skills" className="py-24 bg-[#1E293B] relative">
+      <HeroCanvas />
+
       <div className="container">
         <div className="text-center mb-16 animate-fade-in">
-          <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">Technical Skills</span>
+          <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">
+            Technical Skills
+          </span>
           <h2 className="text-3xl md:text-4xl font-[700] text-[#F1F5F9] mt-2">
             What I work with
           </h2>
           <p className="text-[#94A3B8] mt-3 max-w-xl mx-auto text-base font-light">
-            A curated stack built across 4+ years of production fintech, SaaS, and enterprise work.
+            A curated stack built across 4+ years of production fintech, SaaS,
+            and enterprise work.
           </p>
         </div>
 

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Briefcase } from "lucide-react";
 import { experience } from "@/data/portfolio";
+import HeroCanvas from "./HeroCanvas";
 
 const Videos = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   return (
-    <section id="experience" className="py-24 bg-[#0F172A]">
+    <section id="experience" className="py-24 bg-[#0F172A] relative">
+      <HeroCanvas />
       <div className="container">
         <div className="text-center mb-16 animate-fade-in">
           <span className="text-[#3B82F6] text-sm font-[600] uppercase tracking-widest">Work History</span>

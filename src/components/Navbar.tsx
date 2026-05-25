@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 md:rounded-3xl bg-[#0F172A]/80 backdrop-blur-[56px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out border border-[#1E293B] ${
+      className={`fixed left-0 right-0 z-50 md:rounded-3xl bg-transparent backdrop-blur-[26px] md:max-w-[1200px] mx-auto shadow-md transition-all duration-300 ease-in-out border border-[#1E293B] ${
         isScrolled ? 'top-0' : 'md:top-[40px]'
       }`}
     >

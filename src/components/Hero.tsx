@@ -2,6 +2,7 @@ import React from "react";
 import { Mail, ArrowDown, Download, Code2, Layers, Zap } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import useTypewriter from "@/hooks/useTypewriter";
+import HeroCanvas from "@/components/HeroCanvas";
 
 const roles = [
   "Senior Frontend Engineer",
@@ -71,34 +72,14 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0F172A 0%, #0a1628 50%, #0F172A 100%)" }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0F172A]"
     >
-      {/* Perspective grid floor */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-72 z-0 opacity-20"
-        style={{
-          backgroundImage: `linear-gradient(#3B82F6 1px, transparent 1px), linear-gradient(90deg, #3B82F6 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-          transform: "perspective(600px) rotateX(70deg)",
-          transformOrigin: "center bottom",
-          maskImage: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)",
-        }}
-      />
+      {/* 3D reactive water wave canvas */}
+      <HeroCanvas />
 
-      {/* Subtle top grid overlay */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(#3B82F6 1px, transparent 1px), linear-gradient(90deg, #3B82F6 1px, transparent 1px)`,
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      {/* Glowing orbs */}
-      <div className="absolute top-1/3 left-[-80px] w-80 h-80 bg-[#3B82F6]/12 rounded-full blur-[80px] z-0 animate-pulse-subtle" />
-      <div className="absolute bottom-1/4 right-[-60px] w-64 h-64 bg-[#60A5FA]/08 rounded-full blur-[80px] z-0 animate-pulse-subtle animate-delay-300" />
+      {/* Soft depth orbs — sit behind content, above canvas */}
+      <div className="absolute top-1/3 left-[-80px] w-96 h-96 bg-[#3B82F6]/08 rounded-full blur-[100px] z-[1] pointer-events-none animate-pulse-subtle" />
+      <div className="absolute bottom-1/4 right-[-60px] w-72 h-72 bg-[#60A5FA]/06 rounded-full blur-[100px] z-[1] pointer-events-none animate-pulse-subtle animate-delay-300" />
 
       {/* Main content */}
       <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-center gap-16 py-32 lg:py-0">
