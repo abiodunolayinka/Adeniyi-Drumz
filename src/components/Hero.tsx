@@ -1,4 +1,3 @@
-import React from "react";
 import { Mail, ArrowDown, Download, Code2, Layers, Zap } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import useTypewriter from "@/hooks/useTypewriter";
@@ -72,14 +71,15 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0F172A]"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#050F08]"
     >
-      {/* 3D reactive water wave canvas */}
+      {/* Nature canvas — aurora, fireflies, leaves, trees */}
       <HeroCanvas />
 
-      {/* Soft depth orbs — sit behind content, above canvas */}
-      <div className="absolute top-1/3 left-[-80px] w-96 h-96 bg-[#3B82F6]/08 rounded-full blur-[100px] z-[1] pointer-events-none animate-pulse-subtle" />
-      <div className="absolute bottom-1/4 right-[-60px] w-72 h-72 bg-[#60A5FA]/06 rounded-full blur-[100px] z-[1] pointer-events-none animate-pulse-subtle animate-delay-300" />
+      {/* Forest-depth orbs — behind content, above canvas */}
+      <div className="absolute top-1/3 left-[-80px] w-96 h-96 bg-[#22C55E]/06 rounded-full blur-[120px] z-[1] pointer-events-none animate-pulse-subtle" />
+      <div className="absolute bottom-1/4 right-[-60px] w-72 h-72 bg-[#4ADE80]/05 rounded-full blur-[100px] z-[1] pointer-events-none animate-pulse-subtle animate-delay-300" />
+      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-[#FCD34D]/03 rounded-full blur-[90px] z-[1] pointer-events-none animate-pulse-subtle animate-delay-200" />
 
       {/* Main content */}
       <div className="container relative z-10 flex flex-col lg:flex-row items-center justify-center gap-16 py-32 lg:py-0">
@@ -201,9 +201,14 @@ const Hero = () => {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[#334155] animate-bounce opacity-0 text-reveal text-reveal-delay-5">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-[#4ADE80]/60 animate-bounce opacity-0 text-reveal text-reveal-delay-5">
         <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
         <ArrowDown size={14} />
+      </div>
+
+      {/* Interaction hint */}
+      <div className="absolute bottom-8 right-6 flex items-center px-3 py-1.5 rounded-full bg-black/20 backdrop-blur-sm border border-[#4ADE80]/15 opacity-0 text-reveal text-reveal-delay-5 pointer-events-none">
+        <span className="text-[9px] tracking-[0.18em] uppercase text-[#4ADE80]/50">drag · move · click</span>
       </div>
     </section>
   );
