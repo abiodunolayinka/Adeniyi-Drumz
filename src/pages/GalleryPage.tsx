@@ -6,32 +6,32 @@ type GalleryTab = "photos" | "videos";
 
 const photos = [
   {
-    src: imageUrl("bg"),
+    src: imageUrl("gal8"),
     alt: "Adeniyi Adekoya performing with percussionists",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: imageUrl("image2"),
+    src: imageUrl("gal1"),
     alt: "Adeniyi Adekoya seated at a drum kit",
     className: "",
   },
   {
-    src: imageUrl("image6"),
+    src: imageUrl("gal4"),
     alt: "Adeniyi Adekoya performing with a percussion group",
     className: "",
   },
   {
-    src: imageUrl("image5"),
+    src: imageUrl("gal2"),
     alt: "Adeniyi Adekoya teaching beside a blue drum kit",
     className: "",
   },
   {
-    src: imageUrl("image2Jpg"),
+    src: imageUrl("gal3"),
     alt: "Workshop participants in a community hall",
     className: "",
   },
   {
-    src: imageUrl("image3"),
+    src: imageUrl("gal4"),
     alt: "Workshop group posing with drumsticks",
     className: "",
   },
@@ -41,17 +41,17 @@ const photos = [
     className: "",
   },
   {
-    src: imageUrl("image7"),
+    src: imageUrl("gal5"),
     alt: "Community performance group photo",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: imageUrl("image6"),
+    src: imageUrl("gal6"),
     alt: "Welcoming cultures celebration performance",
     className: "",
   },
   {
-    src: imageUrl("image4"),
+    src: imageUrl("gal7"),
     alt: "Live cultural drumming performance",
     className: "",
   },
@@ -59,19 +59,19 @@ const photos = [
 
 const videos = [
   {
-    src: imageUrl("image4"),
+    src: imageUrl("gal1"),
     alt: "Live cultural drumming video",
   },
   {
-    src: imageUrl("image3"),
+    src: imageUrl("gal2"),
     alt: "Workshop group video",
   },
   {
-    src: imageUrl("image2Jpg"),
+    src: imageUrl("gal3"),
     alt: "Participatory rhythm workshop video",
   },
   {
-    src: imageUrl("bg"),
+    src: imageUrl("gal4"),
     alt: "Community percussion performance video",
   },
 ];

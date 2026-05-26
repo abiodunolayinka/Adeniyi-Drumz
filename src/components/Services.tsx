@@ -6,21 +6,21 @@ const serviceItems = [
     title: "Workshops",
     description:
       "Participants learn about rhythm, collaboration, and self-expression. Our workshops are designed to be fun, engaging, and educational.",
-    image: imageUrl("image2"),
+    image: imageUrl("gal1"),
     alt: "Drumming workshop session",
   },
   {
     title: "Performances",
     description:
       "Audiences are captivated by the energy and skill Adeniyi brings to every performance. His passion is infectious, creating unforgettable experiences.",
-    image: imageUrl("image6"),
+    image: imageUrl("gal2"),
     alt: "Adeniyi performing on stage with musicians",
   },
   {
     title: "Collaborations",
     description:
       "Adeniyi's collaborative projects blend diverse musical traditions, fostering unity and creativity. These projects showcase the power of music.",
-    image: imageUrl("bg"),
+    image: imageUrl("gal3"),
     alt: "Collaborative drumming performance",
   },
 ];
