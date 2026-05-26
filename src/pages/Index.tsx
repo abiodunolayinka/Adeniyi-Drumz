@@ -40,7 +40,7 @@ const Index = () => {
       <About />
       <Services />
       <Testimonials />
-      <Contact />
+      <Contact variant="landing" />
       <ScrollToTop />
     </div>
   );
