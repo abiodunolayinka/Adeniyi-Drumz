@@ -52,6 +52,12 @@
     --figma-screen-muted: #475569;
     --figma-screen-blue: #1f6fd1;
     --figma-screen-blue-strong: #2073c9;
+
+    /* ── Adeniyi Drumz brand palette ── */
+    --brand-gold: #D4AF37;
+    --brand-gold-hover: #c49b2a;
+    --brand-dark: #0a0a0a;
+    --brand-dark-surface: #0d0d0d;
   }
 
   .dark {

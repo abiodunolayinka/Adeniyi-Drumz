@@ -1,11 +1,10 @@
-import React from "react";
 import { imageUrl } from "../lib/image";
 
 const About = () => {
   return (
     <section id="about" className="bg-white px-4 pb-28 pt-20 text-[#242424] sm:px-8 lg:px-16">
       <div className="mx-auto max-w-[1240px] text-center">
-        <h2 className="text-[16px] font-bold leading-tight tracking-normal sm:text-[32px]">
+        <h2 className="text-[28px] font-bold leading-tight tracking-normal sm:text-[32px]">
           About Me
         </h2>
         <p className="mx-auto mt-4 max-w-[700px] text-[14px] font-normal leading-[1.5] text-[#2f2f2f] sm:text-[16px]">
@@ -17,7 +16,7 @@ const About = () => {
 
         <a
           href="#contact"
-          className="mt-7 inline-flex h-10 items-center justify-center rounded bg-[#3179cf] px-6 text-[14px] sm:text-[16px] font-bold text-white transition-colors hover:bg-[#2369ba]"
+          className="mt-7 inline-flex h-10 items-center justify-center rounded-full bg-[#D4AF37] px-8 text-[14px] sm:text-[16px] font-bold text-black transition-colors hover:bg-[#c49b2a]"
         >
           Work With Me
         </a>
